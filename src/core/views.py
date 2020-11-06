@@ -1,6 +1,5 @@
 from django.shortcuts import render
-
+from django.http import HttpResponse
 
 def index(request):
-    # No template yet
-    pass
+    return HttpResponse("Hello!!")
