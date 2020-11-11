@@ -1,5 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from core.models import Post
+
 
 def index(request):
-    return HttpResponse("Hello!!")
+    posts = Post.objects.all().order_by("-date_created")
+    context = {
+        "posts": posts,
+    }
+    return render(request, "index.html", context)

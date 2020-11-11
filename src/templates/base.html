@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Blog</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <!-- Start header -->
+    <header>
+        <!-- Start nav -->
+        <nav class="navbar">
+            <!-- Logo -->
+            <a href="{% url 'home' %}">
+                <div class="logo-wrap">
+                    <img src="{% static 'img/b-logo.png' %}" class="logo-img" alt="logo">
+                    <span class="logo-text">log</span>
+                </div>
+            </a>
+
+            <!-- Nav links -->
+            <ul class=nav-links>
+                <li class="nav-link"><a href="#">Home</a></li>
+                <li class="nav-link"><a href="#">About</a></li>
+                <li class="nav-link"><a href="#">Contact</a></li>
+                <li class="nav-link"><a href="#">Support</a></li>
+            </ul>
+        </nav>
+        <!-- End nav -->
+    </header>
+    <!-- End header -->
+    <!-- Start main -->
+    <main>
+        
+        {% block content %}
+            
+        {% endblock content %}
+            
+    </main>
+    <!-- End main -->
+    <!-- Start footer -->
+    <footer>
+
+    </footer>
+    <!-- End footer -->
+</body>
+
+</html>
